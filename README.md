@@ -17,8 +17,3 @@ The Vite renderer is also usable in a browser. In browser mode the folder picker
 npm test
 npm run build
 ```
-
-The Electron compiler uses TypeScript's `Node16` module resolution. If a local
-checkout reports the removed `node10` resolution mode, update the branch before
-building and confirm that `tsconfig.electron.json` contains
-`"moduleResolution": "Node16"`.
