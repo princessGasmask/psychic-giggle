@@ -25,7 +25,7 @@ async function scan(folder: string): Promise<MediaItem[]> {
 
 function createWindow() {
   const win = new BrowserWindow({ width: 1440, height: 940, minWidth: 980, minHeight: 720, backgroundColor: '#090b13', titleBarStyle: 'hiddenInset', webPreferences: { preload: path.join(__dirname, '../preload/preload.js'), contextIsolation: true, nodeIntegration: false } });
-  if (!app.isPackaged) void win.loadURL(process.env.VITE_DEV_SERVER_URL ?? 'http://localhost:5173');
+  if (process.env.VITE_DEV_SERVER_URL) void win.loadURL(process.env.VITE_DEV_SERVER_URL);
   else void win.loadFile(path.join(__dirname, '../../dist/index.html'));
 }
 
