@@ -1,0 +1,42 @@
+{
+  "name": "starplay",
+  "version": "0.1.0",
+  "private": true,
+  "description": "A gamified local media player",
+  "main": "dist-electron/main/main.js",
+  "scripts": {
+    "dev": "concurrently -k \"vite --host 0.0.0.0\" \"npm:dev:electron\"",
+    "dev:electron": "wait-on tcp:5173 && npm run build:electron && electron .",
+    "build": "tsc -b && vite build && npm run build:electron",
+    "build:electron": "tsc -p tsconfig.electron.json",
+    "preview": "vite preview --host 0.0.0.0",
+    "test": "vitest run",
+    "lint": "eslint . --max-warnings=0"
+  },
+  "dependencies": {
+    "@vitejs/plugin-react": "latest",
+    "vite": "latest",
+    "typescript": "latest",
+    "react": "latest",
+    "react-dom": "latest",
+    "lucide-react": "latest"
+  },
+  "devDependencies": {
+    "@eslint/js": "latest",
+    "@testing-library/jest-dom": "latest",
+    "@testing-library/react": "latest",
+    "@types/node": "latest",
+    "@types/react": "latest",
+    "@types/react-dom": "latest",
+    "concurrently": "latest",
+    "electron": "latest",
+    "eslint": "latest",
+    "eslint-plugin-react-hooks": "latest",
+    "eslint-plugin-react-refresh": "latest",
+    "globals": "latest",
+    "jsdom": "latest",
+    "typescript-eslint": "latest",
+    "vitest": "latest",
+    "wait-on": "latest"
+  }
+}
